@@ -2,6 +2,18 @@
   text-align: center;
 }
 
+:root {
+  --primary: #1c1b20;
+  --primary-variant: #fc5957;
+  --primary-container: #F9F9F9;
+}
+
+.spacer {
+  height: 150vh;
+}
+
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

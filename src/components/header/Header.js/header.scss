@@ -1,0 +1,69 @@
+.header {
+  min-height: 80vh;
+  display: grid;
+  display: flex;
+  padding: 1em;
+  place-content: center;
+  div {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    padding: 1em;
+    flex-basis: 50%;
+  }
+  .left {
+    align-items: flex-end;
+    background: radial-gradient(circle at 0% 100%, #333 20%, rgb(27, 27, 27) 100%);
+    color: #dfdfdf;
+  }
+  .right {
+    padding: 1em 0;
+    margin: 1em 0 0;
+    align-items: flex-start;
+    justify-content: space-between;
+    h1 {
+      text-align: start;
+      color: #333333;
+    }
+  }
+  h1 {
+    text-transform: uppercase;
+    line-height: 0.75;
+    font-size: 7vw;
+    span {
+      color: #fc5957;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 8em 0 0 0em;
+    color: #333333;
+    li {
+      cursor: pointer;
+      list-style: none;
+      font-size: 2em;
+      margin-bottom: 0.5em;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        bottom: -3px;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background-color: #fc5957;
+      }
+    }
+    .contact {
+      background-color: #fc5957;
+      color: #dfdfdf;
+      margin: 0 0 5px 0;
+      padding: 0.5em;
+    }
+  }
+}
