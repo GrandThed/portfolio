@@ -38,7 +38,7 @@ const ListItem = ({ index, onClick }) => {
           <div className="listItemContent">
             <Flipped
               flipId={`avatar-${index}`}
-              stagger="card-content"
+              stagger="card-image"
               shouldFlip={shouldFlip(index)}
               delayUntil={createCardFlipId(index)}
             >
@@ -79,10 +79,10 @@ const ExpandedListItem = ({ index, onClick }) => {
           <div className="listItemContent-expanded">
             <Flipped
               flipId={`avatar-${index}`}
-              stagger="card-content"
+              stagger="card-image"
               delayUntil={createCardFlipId(index)}
             >
-              <img alt="" src="https://picsum.photos/seed/picsum/900/700" className="avatar-expanded" />
+              <img alt="" src="https://picsum.photos/seed/picsum/900/600" className="avatar-expanded" />
             </Flipped>
             <div className="description">
               {listData.slice(0, 3).map((i) => (
@@ -118,7 +118,7 @@ class AnimatedList extends Component {
       <Flipper
         flipKey={this.state.focused}
         className="staggered-list-content"
-        spring="gentle"
+        spring="noWobble"
         staggerConfig={{
           card: {
             reverse: this.state.focused !== null,
