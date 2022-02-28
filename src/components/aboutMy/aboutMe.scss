@@ -1,7 +1,7 @@
 .about {
   display: flex;
   flex-direction: column;
-  padding: 0 2em;
+  padding: 0 11em;
   h2 {
     font-size: 6em;
     text-transform: uppercase;
@@ -11,12 +11,19 @@
   }
   &-body {
     align-self: flex-start;
-    display: flex;
+    gap: 2em;
+    img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      float: right;
+      shape-outside: circle();
+    }
     p {
       text-align: left;
       color: #333333;
       font-size: 2vw;
-      line-height: 1.7;
+      line-height: 1.2;
       span {
         a {
           text-decoration: none;

@@ -1,12 +1,13 @@
 import React from "react";
 import "./aboutMe.scss";
-
+import me from "../../assets/32280623.jfif";
 const AboutMe = () => {
   return (
     <div className="about">
       <h2>About me</h2>
 
       <div className="about-body">
+        <img src={me} alt="" />
         <p>
           I'm{" "}
           <span>
@@ -31,7 +32,7 @@ const AboutMe = () => {
           with one year of profecional experience and learning some{" "}
           <span>
             <a target={"_blank"} rel="noreferrer" href="https://flutter.dev/">
-              Flutter
+              other tecnologies
             </a>
           </span>
           , currently working for{" "}
