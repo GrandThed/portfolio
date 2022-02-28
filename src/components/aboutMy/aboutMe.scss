@@ -1,0 +1,30 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  padding: 0 2em;
+  h2 {
+    font-size: 6em;
+    text-transform: uppercase;
+    color: #333333;
+    flex-grow: 1;
+    text-align: end;
+  }
+  &-body {
+    align-self: flex-start;
+    display: flex;
+    p {
+      text-align: left;
+      color: #333333;
+      font-size: 2vw;
+      line-height: 1.7;
+      span {
+        a {
+          text-decoration: none;
+          color: unset;
+        }
+        cursor: pointer;
+        color: rgb(252, 89, 87);
+      }
+    }
+  }
+}
