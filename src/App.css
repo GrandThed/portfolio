@@ -6,6 +6,8 @@
   --primary: #1c1b20;
   --primary-variant: #fc5957;
   --primary-container: #F9F9F9;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5em;
 }
 
 .spacer {

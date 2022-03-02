@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component, useRef } from "react";
 import { Flipper, Flipped } from "react-flip-toolkit";
 import "./projects.scss";
 
@@ -20,7 +20,7 @@ const CustomAnimatedCards = () => {
 
 export default Projects;
 
-const listData = [...Array(7).keys()];
+const listData = [...Array(6).keys()];
 const createCardFlipId = (index) => `listItem-${index}`;
 
 const shouldFlip = (index) => (prev, current) =>
@@ -42,7 +42,11 @@ const ListItem = ({ index, onClick }) => {
               shouldFlip={shouldFlip(index)}
               delayUntil={createCardFlipId(index)}
             >
-              <img alt="" src="https://picsum.photos/seed/picsum/900/600" className="avatar" />
+              <img
+                alt=""
+                src="https://picsum.photos/seed/picsum/900/600"
+                className="avatar"
+              />
             </Flipped>
             <div className="description">
               {listData.slice(0, 3).map((i) => (
@@ -64,6 +68,8 @@ const ListItem = ({ index, onClick }) => {
 };
 
 const ExpandedListItem = ({ index, onClick }) => {
+  const divRef = useRef(null);
+  console.log(divRef);
   return (
     <Flipped
       flipId={createCardFlipId(index)}
@@ -74,7 +80,14 @@ const ExpandedListItem = ({ index, onClick }) => {
         }, 400);
       }}
     >
-      <div className="listItem-expanded" onClick={() => onClick(index)}>
+      <div
+        ref={divRef}
+        className="listItem-expanded"
+        onClick={(el) => {
+          onClick(index);
+          console.log(el);
+        }}
+      >
         <Flipped inverseFlipId={createCardFlipId(index)}>
           <div className="listItemContent-expanded">
             <Flipped
@@ -82,7 +95,11 @@ const ExpandedListItem = ({ index, onClick }) => {
               stagger="card-image"
               delayUntil={createCardFlipId(index)}
             >
-              <img alt="" src="https://picsum.photos/seed/picsum/900/600" className="avatar-expanded" />
+              <img
+                alt=""
+                src="https://picsum.photos/seed/picsum/900/600"
+                className="avatar-expanded"
+              />
             </Flipped>
             <div className="description">
               {listData.slice(0, 3).map((i) => (
@@ -109,10 +126,11 @@ const ExpandedListItem = ({ index, onClick }) => {
 
 class AnimatedList extends Component {
   state = { focused: null };
-  onClick = (index) =>
+  onClick = (index) => {
     this.setState({
       focused: this.state.focused === index ? null : index,
     });
+  };
   render() {
     return (
       <Flipper
@@ -146,6 +164,8 @@ class AnimatedList extends Component {
     );
   }
 }
+
+
 
 // const listData = [...Array(7).keys()];
 // const createCardFlipId = (index) => `listItem-${index}`;

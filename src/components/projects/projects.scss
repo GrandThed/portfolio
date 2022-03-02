@@ -25,15 +25,14 @@
   gap: 2em;
 }
 .listItem {
-  flex: 1 1 40%;
-  width: 100%;
-  height: 20vh;
+  flex: 0 1 calc(50% - 1em);
+  width: 40vw;
+  height: 40vw;
   cursor: pointer;
   background-color: #d0d0d0;
   &-expanded {
     @extend .listItem;
     flex-basis: 100%;
-    min-height: 40vh;
   }
 }
 .listItemContent {
@@ -51,14 +50,17 @@
 .avatar {
   height: 100%;
   margin-right: 1rem;
-  width: auto;
+  width: 100%;
   object-fit: cover;
   &-expanded {
     @extend .avatar;
     margin-right: 0;
+    width: auto;
+    aspect-ratio: 1/1;
   }
 }
 .description > div {
+  display: none;
   background-color: grey;
   width: 14rem;
   border-radius: 6px;
