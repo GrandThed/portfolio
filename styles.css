@@ -88,6 +88,25 @@ body {
     color: var(--color-text-muted);
 }
 
+.btn-download {
+    display: inline-block;
+    margin-top: var(--spacing-md);
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-download:hover,
+.btn-download:focus {
+    background-color: var(--color-text);
+    transform: translateY(-1px);
+}
+
 /* Sections */
 .section {
     max-width: var(--max-width);
